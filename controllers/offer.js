@@ -1,5 +1,5 @@
 const fs = require("fs");
-const Offer = require("../models/offer");
+const Offer = require("../models/Offer");
 
 exports.createOffer = (req, res, next) => {
   const offerObject = JSON.parse(req.body.offer);
