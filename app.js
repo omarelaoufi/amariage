@@ -29,15 +29,15 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("/*", (req, res) =>
-  res.sendFile(path.join(__dirname, "build", "index.html"))
-);
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use("/api/offer", offerRoutes);
 app.use("/api/auth", userRoutes);
+
+app.get("/*", (req, res) =>
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+);
 
 module.exports = app;
